@@ -18,7 +18,9 @@ jobs:
 
       - run: echo $(pwd)
 
-      - run: find /home/runner/ | grep Test1.sol
+      - run: ls -alh
+
+      - run: find /home/runner/ | grep Test
 
       # - name: Clone Solidity compiler
       #   uses: actions/checkout@master
