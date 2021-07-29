@@ -19,14 +19,15 @@ jobs:
         run: |
           tondev sol set --compiler 0.47.0
 
-      - name: Extra info
-        run: |
-          echo $(find / | grep Test.sol)
-          echo $(pwd)
-
       - name: Compile contract
         run: |
+          cd /github/workspace/
           tondev sol compile Test.sol
+
+      - name: Extra info
+        run: |
+          echo $(find . | grep Test.sol)
+          echo $(pwd)
 
       # - name: Clone Solidity compiler
       #   uses: actions/checkout@master
