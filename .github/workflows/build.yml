@@ -11,23 +11,12 @@ jobs:
         with:
           node-version: 12
 
-      - name: Install tondev
+      - name: Tondev setup
         run: |
           npm install -g tondev
-      
-      - name: Set solidity compiler version
-        run: |
           tondev sol set --compiler 0.47.0
 
-      - name: Compile contract
-        run: |
-          cd /github/workspace/
-          tondev sol compile Test.sol
-
-      - name: Extra info
-        run: |
-          echo $(find . | grep Test.sol)
-          echo $(pwd)
+      - run: tondev sol compile Test.sol
 
       # - name: Clone Solidity compiler
       #   uses: actions/checkout@master
