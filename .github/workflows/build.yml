@@ -19,6 +19,11 @@ jobs:
         run: |
           tondev sol set --compiler 0.47.0
 
+      - name: Extra info
+        run: |
+          ls .
+          echo $(pwd)
+
       - name: Compile contract
         run: |
           tondev sol compile Test.sol
