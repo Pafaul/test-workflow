@@ -16,6 +16,8 @@ jobs:
           npm install -g tondev
           tondev sol set --compiler 0.47.0
 
+      - run: echo $(pwd)
+
       - run: tondev sol compile Test.sol
 
       # - name: Clone Solidity compiler
