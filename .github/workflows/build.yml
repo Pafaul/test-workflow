@@ -11,14 +11,14 @@ jobs:
         with:
           node-version: 12
 
-      - name: Tondev setup
-        run: |
-          npm install -g tondev
-          tondev sol set --compiler 0.47.0
+      # - name: Tondev setup
+      #   run: |
+      #     npm install -g tondev
+      #     tondev sol set --compiler 0.47.0
 
       - run: echo $(pwd)
 
-      - run: tondev sol compile Test.sol
+      - run: find /home/runner/ | grep Test.sol
 
       # - name: Clone Solidity compiler
       #   uses: actions/checkout@master
