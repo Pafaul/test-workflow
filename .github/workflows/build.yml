@@ -11,6 +11,9 @@ jobs:
         with:
           node-version: 12
 
+      - uses: actions/checkout@v2
+        with: master
+
       # - name: Tondev setup
       #   run: |
       #     npm install -g tondev
