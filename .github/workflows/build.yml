@@ -21,7 +21,7 @@ jobs:
 
       - name: Extra info
         run: |
-          ls .
+          echo $(find . | grep Test.sol)
           echo $(pwd)
 
       - name: Compile contract
