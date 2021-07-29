@@ -13,16 +13,15 @@ jobs:
 
       - uses: actions/checkout@v2
 
-      # - name: Tondev setup
-      #   run: |
-      #     npm install -g tondev
-      #     tondev sol set --compiler 0.47.0
+      - name: Tondev setup
+        run: |
+          npm install -g tondev
+          tondev sol set --compiler 0.47.0
 
-      - run: echo $(pwd)
-
-      - run: ls -alh
-
-      - run: find /home/runner/ | grep Test
+      - name: Compile contracts
+        run: |
+          tondev sol compile Test.sol
+          tondev sol compile Test1.sol
 
       # - name: Clone Solidity compiler
       #   uses: actions/checkout@master
